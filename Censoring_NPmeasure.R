@@ -656,38 +656,38 @@ summarize_simulation <- function(results, alpha = 0.05) {
 # 9. Pilot run: start small to verify that everything runs
 # ------------------------------------------------------------
 
-pilot_design <- expand.grid(
-  n = c(50, 100),
-  model = c("linear", "quadratic"),
-  theta = c(0, 0.50),
-  error = "normal",
-  censoring = c(0.10, 0.30),
-  censoring_type = c("independent", "conditional"),
-  stringsAsFactors = FALSE
-)
+#pilot_design <- expand.grid(
+#n = c(50, 100),
+#model = c("linear", "quadratic"),
+#theta = c(0, 0.50),
+#error = "normal",
+#censoring = c(0.10, 0.30),
+#censoring_type = c("independent", "conditional"),
+#stringsAsFactors = FALSE
+#)
 
-pilot_results <- run_simulation(
-  design = pilot_design,
-  N_MC = 10,
-  B = 99,
-  n_cal = 1000
-)
+#pilot_results <- run_simulation(
+#design = pilot_design,
+#N_MC = 10,
+#B = 99,
+#n_cal = 1000
+#)
 
-pilot_summary <- summarize_simulation(pilot_results)
+#pilot_summary <- summarize_simulation(pilot_results)
 
-write.csv(
-  pilot_results,
-  "pilot_replication_results.csv",
-  row.names = FALSE
-)
+#write.csv(
+#pilot_results,
+#"pilot_replication_results.csv",
+#row.names = FALSE
+#)
 
-write.csv(
-  pilot_summary,
-  "pilot_simulation_summary.csv",
-  row.names = FALSE
-)
+#write.csv(
+#pilot_summary,
+#"pilot_simulation_summary.csv",
+#row.names = FALSE
+#)
 
-print(head(pilot_summary))
+#print(head(pilot_summary))
 
 # ------------------------------------------------------------
 # 10. Full simulation: computationally intensive
